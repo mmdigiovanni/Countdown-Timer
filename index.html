@@ -11,16 +11,16 @@
         padding: 0;
         box-sizing: border-box;
     }
-    /* Set background color and wave effect */
+    /* Set background color and wave effect using black and grays */
     body {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background: linear-gradient(135deg, #AF283A 30%, #D53B50 70%);
+        background: linear-gradient(135deg, #2E2E2E 30%, #1C1C1C 70%); /* Darker grays */
         overflow: hidden;
         color: white;
-        font-family: Arial, sans-serif;
+        font-family: 'Arial Black', sans-serif; /* Similar to Century Gothic Bold */
     }
     /* Waves background animation with black color */
     .waves {
@@ -30,7 +30,7 @@
         right: 0;
         bottom: 0;
         overflow: hidden;
-        background: black; /* Changed to black */
+        background: #1c1c1c; /* Changed to a deeper black */
         opacity: 0.6; /* Adjusted opacity for better contrast */
         z-index: 0;
     }
@@ -48,12 +48,13 @@
     }
     /* Styling for IREC title */
     #irec-title {
-        font-size: 2em;
+        font-size: 3em; /* Bigger text for "IREC" */
         margin-bottom: 20px;
+        font-weight: bold;
     }
     /* Countdown text styling */
     #countdown {
-        font-size: 6em;
+        font-size: 7em; /* Larger countdown numbers */
         font-weight: bold;
         margin-top: 20px;
     }
