@@ -36,26 +36,29 @@
         margin-bottom: 20px;
         opacity: 1;
     }
-    /* T- Countdown title */
+    /* T- Countdown title, placed on the same line as the countdown */
     #launch-title {
-        font-size: 5em; /* Larger T- size */
-        margin-bottom: 20px; /* Add space between T- and countdown */
+        font-size: 3.5em; /* Adjusted size of T- */
         font-weight: bold;
-        letter-spacing: 5px; /* Added space for that countdown feel */
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
     }
     /* Countdown timer section */
     #countdown {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        margin-top: 20px;
+        margin-top: 100px;
     }
     .time-section {
-        font-size: 6em; /* Set countdown font size */
+        font-size: 8em; /* Increased font size for countdown numbers */
         font-weight: bold;
         font-family: 'Digital-7', sans-serif;
-        margin: 0 10px;
-        position: relative;
+        margin: 0 20px;
     }
     /* Labels (Days, Hours, Minutes, Seconds) below each time part */
     .label {
@@ -77,7 +80,7 @@
 <div class="container">
     <!-- Replace with your logo image -->
     <img src="HPRC_logo.png" alt="HPRC Logo" class="logo">
-    <!-- Countdown Title with T- prefix -->
+    <!-- Countdown Title with T- prefix (on the same line as the countdown) -->
     <div id="launch-title">T-</div>
     <!-- Countdown time sections with labels (Days, Hours, Minutes, Seconds) -->
     <div id="countdown">
