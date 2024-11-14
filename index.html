@@ -38,21 +38,27 @@
         margin-bottom: 20px;
     }
 
+    /* Flexbox container for T- and countdown */
+    .countdown-container {
+        display: flex;
+        align-items: center; /* Align the T- and countdown on the same line */
+        justify-content: center; /* Center everything */
+        margin-bottom: 20px;
+    }
+
     /* T- countdown text styling */
     #launch-title {
         font-family: 'Arial', sans-serif;
         font-size: 4em; /* Size for T- */
         font-weight: bold;
         letter-spacing: 5px;
-        margin-bottom: 10px;
-        display: inline-block; /* Ensure it stays on the same line */
+        margin-right: 20px; /* Space between T- and countdown */
     }
 
-    /* Countdown styling */
+    /* Countdown timer sections */
     #countdown {
         display: flex;
         justify-content: center;
-        margin-top: 20px;
     }
 
     .time-section {
@@ -91,26 +97,29 @@
     <!-- Logo Image -->
     <img src="HPRC_logo.png" alt="HPRC Logo" class="logo">
     
-    <!-- T- countdown text on the same line as the countdown -->
-    <div id="launch-title">T-</div>
+    <!-- Flexbox container for T- and countdown -->
+    <div class="countdown-container">
+        <!-- T- countdown text -->
+        <div id="launch-title">T-</div>
 
-    <!-- Countdown timer sections -->
-    <div id="countdown">
-        <div class="time-section">
-            <div class="time-number" id="days"></div>
-            <div class="label">Days</div>
-        </div>
-        <div class="time-section">
-            <div class="time-number" id="hours"></div>
-            <div class="label">Hours</div>
-        </div>
-        <div class="time-section">
-            <div class="time-number" id="minutes"></div>
-            <div class="label">Minutes</div>
-        </div>
-        <div class="time-section">
-            <div class="time-number" id="seconds"></div>
-            <div class="label">Seconds</div>
+        <!-- Countdown timer sections -->
+        <div id="countdown">
+            <div class="time-section">
+                <div class="time-number" id="days"></div>
+                <div class="label">Days</div>
+            </div>
+            <div class="time-section">
+                <div class="time-number" id="hours"></div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="time-section">
+                <div class="time-number" id="minutes"></div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="time-section">
+                <div class="time-number" id="seconds"></div>
+                <div class="label">Seconds</div>
+            </div>
         </div>
     </div>
 
