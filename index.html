@@ -38,15 +38,15 @@
     }
     /* T- Countdown title */
     #launch-title {
-        font-size: 3em; /* Smaller size for "T-" */
-        margin-bottom: 10px; /* Reduced margin to make it closer to the countdown */
+        font-size: 5em; /* Larger T- size */
+        margin-bottom: 20px; /* Add space between T- and countdown */
         font-weight: bold;
-        letter-spacing: 2px; /* Added space for that countdown feel */
+        letter-spacing: 5px; /* Added space for that countdown feel */
     }
     /* Countdown timer section */
     #countdown {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         margin-top: 20px;
     }
@@ -55,6 +55,7 @@
         font-weight: bold;
         font-family: 'Digital-7', sans-serif;
         margin: 0 10px;
+        position: relative;
     }
     /* Labels (Days, Hours, Minutes, Seconds) below each time part */
     .label {
@@ -77,17 +78,25 @@
     <!-- Replace with your logo image -->
     <img src="HPRC_logo.png" alt="HPRC Logo" class="logo">
     <!-- Countdown Title with T- prefix -->
-    <div id="launch-title">T- <span id="countdown"></span></div>
+    <div id="launch-title">T-</div>
     <!-- Countdown time sections with labels (Days, Hours, Minutes, Seconds) -->
     <div id="countdown">
-        <div class="time-section" id="days"></div>
-        <div class="label">Days</div>
-        <div class="time-section" id="hours"></div>
-        <div class="label">Hours</div>
-        <div class="time-section" id="minutes"></div>
-        <div class="label">Minutes</div>
-        <div class="time-section" id="seconds"></div>
-        <div class="label">Seconds</div>
+        <div class="time-section">
+            <div id="days"></div>
+            <div class="label">Days</div>
+        </div>
+        <div class="time-section">
+            <div id="hours"></div>
+            <div class="label">Hours</div>
+        </div>
+        <div class="time-section">
+            <div id="minutes"></div>
+            <div class="label">Minutes</div>
+        </div>
+        <div class="time-section">
+            <div id="seconds"></div>
+            <div class="label">Seconds</div>
+        </div>
     </div>
     <!-- Additional Title for Project -->
     <div id="project-title">Launch of Project Elysium</div>
