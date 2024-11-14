@@ -1,59 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #222;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        #logo {
-            max-width: 300px;
-            margin-bottom: 20px;
-        }
-        #countdown {
-            font-size: 48px;
-            margin-top: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown to IREC - June 8, 2025</title>
+<style>
+    /* Reset styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* Set background color and wave effect */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #AF283A 30%, #D53B50 70%);
+        overflow: hidden;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    /* Waves background animation */
+    .waves {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background: #D53B50;
+        opacity: 0.3;
+        z-index: 0;
+    }
+    /* Styling for countdown container */
+    .container {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+    /* Logo styles */
+    .logo {
+        max-width: 150px;
+        margin-bottom: 20px;
+    }
+    /* Countdown text styling */
+    #countdown {
+        font-size: 6em;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    /* Styling for the title text */
+    #title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+</style>
 </head>
 <body>
-    <img id="logo" src="HPRC_logo.png" alt="HPRC Logo">
+
+<!-- Background Wave SVG -->
+<div class="waves">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="width: 100%; height: 100%; transform: rotate(180deg);">
+        <path d="M0,120L80,106.7C160,93,320,67,480,53.3C640,40,800,40,960,53.3C1120,67,1280,93,1360,106.7L1440,120L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" fill="#ffffff" opacity="0.5"></path>
+    </svg>
+</div>
+
+<!-- Countdown Container -->
+<div class="container">
+    <div id="title">Countdown to IREC - June 8, 2025</div>
+    <!-- Replace with your logo image -->
+    <img src="HPRC_logo.png" alt="HPRC Logo" class="logo">
     <div id="countdown"></div>
+</div>
 
-    <script>
-        // Set the target date
-        const targetDate = new Date('YYYY-MM-DDTHH:MM:SS'); // Replace with your target date and time
-        
-        function updateCountdown() {
-            const now = new Date();
-            const timeDiff = targetDate - now;
+<script>
+// Set the target date for the countdown
+var targetDate = new Date("June 8, 2025 00:00:00").getTime();
 
-            if (timeDiff <= 0) {
-                document.getElementById('countdown').innerText = "Countdown Complete!";
-                return;
-            }
+// Update the countdown every 1 second
+var countdownInterval = setInterval(function() {
 
-            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    var now = new Date().getTime();
+    var timeLeft = targetDate - now;
 
-            document.getElementById('countdown').innerText = 
-                `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
+    // Calculate the time remaining
+    var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        // Update the countdown every second
-        setInterval(updateCountdown, 1000);
-    </script>
+    // Display the result
+    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    // If the countdown is over, display a message
+    if (timeLeft < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+
 </body>
 </html>
