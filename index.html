@@ -38,17 +38,29 @@
     }
     /* T- Countdown title */
     #launch-title {
-        font-size: 4em; /* Smaller size for "T-" */
+        font-size: 3em; /* Smaller size for "T-" */
         margin-bottom: 10px; /* Reduced margin to make it closer to the countdown */
         font-weight: bold;
         letter-spacing: 2px; /* Added space for that countdown feel */
     }
-    /* Countdown timer */
+    /* Countdown timer section */
     #countdown {
-        font-size: 4em; /* Set countdown font size */
-        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-top: 20px;
-        font-family: 'Digital-7', sans-serif; /* Digital countdown font */
+    }
+    .time-section {
+        font-size: 6em; /* Set countdown font size */
+        font-weight: bold;
+        font-family: 'Digital-7', sans-serif;
+        margin: 0 10px;
+    }
+    /* Labels (Days, Hours, Minutes, Seconds) below each time part */
+    .label {
+        font-size: 1.5em;
+        margin-top: 10px;
+        text-transform: capitalize; /* Capitalize the labels */
     }
     /* Launch project text style */
     #project-title {
@@ -66,6 +78,17 @@
     <img src="HPRC_logo.png" alt="HPRC Logo" class="logo">
     <!-- Countdown Title with T- prefix -->
     <div id="launch-title">T- <span id="countdown"></span></div>
+    <!-- Countdown time sections with labels (Days, Hours, Minutes, Seconds) -->
+    <div id="countdown">
+        <div class="time-section" id="days"></div>
+        <div class="label">Days</div>
+        <div class="time-section" id="hours"></div>
+        <div class="label">Hours</div>
+        <div class="time-section" id="minutes"></div>
+        <div class="label">Minutes</div>
+        <div class="time-section" id="seconds"></div>
+        <div class="label">Seconds</div>
+    </div>
     <!-- Additional Title for Project -->
     <div id="project-title">Launch of Project Elysium</div>
 </div>
@@ -87,8 +110,10 @@ var countdownInterval = setInterval(function() {
     var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
     // Display the result
-    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
 
     // If the countdown is over, display a message
     if (timeLeft < 0) {
