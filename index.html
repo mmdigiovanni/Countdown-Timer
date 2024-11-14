@@ -13,6 +13,7 @@
         padding: 0;
         box-sizing: border-box;
     }
+
     /* Set background color to black */
     body {
         display: flex;
@@ -24,18 +25,21 @@
         color: white;
         font-family: 'Arial', sans-serif;
     }
+
     /* Styling for countdown container */
     .container {
         position: relative;
         z-index: 1;
         text-align: center;
     }
+
     /* Logo styles */
     .logo {
         max-width: 250px; /* Adjusted logo size */
         margin-bottom: 20px;
         opacity: 1;
     }
+
     /* T- Countdown title, placed on the same line as the countdown */
     #launch-title {
         font-size: 3.5em; /* Adjusted size of T- */
@@ -47,6 +51,7 @@
         left: 50%;
         transform: translateX(-50%);
     }
+
     /* Countdown timer section */
     #countdown {
         display: flex;
@@ -54,20 +59,23 @@
         align-items: center;
         margin-top: 100px;
     }
+
     .time-section {
+        font-family: 'Digital-7', sans-serif;
         font-size: 8em; /* Increased font size for countdown numbers */
         font-weight: bold;
-        font-family: 'Digital-7', sans-serif;
         margin: 0 20px;
     }
-    /* Explicit smaller size for labels */
+
+    /* Explicit smaller size for labels, using em units to separate from numbers */
     .label {
         font-size: 1.5em; /* Smaller font size for the labels */
         margin-top: 10px;
-        text-transform: capitalize; /* Capitalize the labels */
+        text-transform: capitalize;
         font-weight: normal;
         font-family: 'Arial', sans-serif; /* Use a different font for labels */
     }
+
     /* Launch project text style */
     #project-title {
         font-size: 2.5em; /* Adjusted font size for "Launch of Project Elysium" */
