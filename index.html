@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Countdown to Project Elysium Launch</title>
-<!-- Importing Digital Countdown Font -->
+
+<!-- Importing Google Fonts for Digital and Arial -->
 <link href="https://fonts.googleapis.com/css2?family=Digital-7&display=swap" rel="stylesheet">
 <style>
     /* Reset styles */
@@ -22,96 +23,97 @@
         height: 100vh;
         background-color: #000000; /* Pure black background */
         overflow: hidden;
-        color: white;
-        font-family: 'Arial', sans-serif;
+        font-family: 'Arial', sans-serif; /* Default font family */
     }
 
-    /* Styling for countdown container */
+    /* Container for everything (logo, countdown, etc.) */
     .container {
-        position: relative;
-        z-index: 1;
         text-align: center;
+        color: white;
     }
 
-    /* Logo styles */
+    /* Logo styling */
     .logo {
-        max-width: 250px; /* Adjusted logo size */
+        max-width: 250px; /* Logo size */
         margin-bottom: 20px;
-        opacity: 1;
     }
 
-    /* T- Countdown title, placed on the same line as the countdown */
+    /* T- countdown text styling */
     #launch-title {
-        font-size: 3.5em; /* Adjusted size of T- */
+        font-family: 'Arial', sans-serif;
+        font-size: 4em; /* Size for T- */
         font-weight: bold;
         letter-spacing: 5px;
         margin-bottom: 20px;
-        position: absolute;
-        top: 30px;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
-    /* Countdown timer section */
+    /* Countdown styling */
     #countdown {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     .time-section {
-        font-family: 'Digital-7', sans-serif;
-        font-size: 8em; /* Increased font size for countdown numbers */
-        font-weight: bold;
+        display: inline-block;
+        text-align: center;
         margin: 0 20px;
     }
 
-    /* Explicit smaller size for labels, using em units to separate from numbers */
-    .label {
-        font-size: 1.5em; /* Smaller font size for the labels */
-        margin-top: 10px;
-        text-transform: capitalize;
-        font-weight: normal;
-        font-family: 'Arial', sans-serif; /* Use a different font for labels */
+    /* Countdown numbers */
+    .time-number {
+        font-family: 'Digital-7', sans-serif;
+        font-size: 8em; /* Size for the countdown numbers */
+        font-weight: bold;
     }
 
-    /* Launch project text style */
+    /* Countdown labels */
+    .label {
+        font-family: 'Arial', sans-serif;
+        font-size: 2em; /* Size for labels (Days, Hours, Minutes, Seconds) */
+        margin-top: 10px;
+    }
+
+    /* Launch project title */
     #project-title {
-        font-size: 2.5em; /* Adjusted font size for "Launch of Project Elysium" */
-        margin-top: 15px;
+        font-family: 'Arial', sans-serif;
+        font-size: 2.5em; /* Font size for Launch of Project Elysium */
         font-weight: bold;
+        margin-top: 20px;
     }
 </style>
 </head>
 <body>
 
-<!-- Countdown Container -->
+<!-- Main container for everything -->
 <div class="container">
-    <!-- Replace with your logo image -->
+    <!-- Logo Image -->
     <img src="HPRC_logo.png" alt="HPRC Logo" class="logo">
-    <!-- Countdown Title with T- prefix (on the same line as the countdown) -->
+    
+    <!-- Countdown title (T-) -->
     <div id="launch-title">T-</div>
-    <!-- Countdown time sections with labels (Days, Hours, Minutes, Seconds) -->
+
+    <!-- Countdown timer sections -->
     <div id="countdown">
         <div class="time-section">
-            <div id="days"></div>
+            <div class="time-number" id="days"></div>
             <div class="label">Days</div>
         </div>
         <div class="time-section">
-            <div id="hours"></div>
+            <div class="time-number" id="hours"></div>
             <div class="label">Hours</div>
         </div>
         <div class="time-section">
-            <div id="minutes"></div>
+            <div class="time-number" id="minutes"></div>
             <div class="label">Minutes</div>
         </div>
         <div class="time-section">
-            <div id="seconds"></div>
+            <div class="time-number" id="seconds"></div>
             <div class="label">Seconds</div>
         </div>
     </div>
-    <!-- Additional Title for Project -->
+
+    <!-- Project Title -->
     <div id="project-title">Launch of Project Elysium</div>
 </div>
 
